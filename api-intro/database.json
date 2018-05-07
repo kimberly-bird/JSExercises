@@ -1,0 +1,25 @@
+{
+    "food": [
+    {
+        "id": "75771e6d-5a80-420a-82a8-94ecbdd863b2",
+        "name": "Pesto",
+        "type": "pasta",
+        "ethnicity": "italian",
+        "sideDishes": [ "asparagus", "squash" ]
+    },
+    {
+        "id": "18211431-2698-4376-a4a3-77b7c183f208",
+        "name": "Tika Masala",
+        "type": "Masala",
+        "ethnicity": "Indian",
+        "sideDishes": [ "Naan", "Jasmine Rice" ]
+    },
+    {
+        "id": "265c6032-8712-425d-b795-aa5416b54118",
+        "name": "Chicken Quesadilla",
+        "type": "tortilla",
+        "ethnicity": "mexican",
+        "sideDishes": [ "mexican ice cream", "beans" ]
+    }
+    ]
+}
