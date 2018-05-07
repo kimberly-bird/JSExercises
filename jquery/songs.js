@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
     // Use jQuery to get a reference to `load-songs`
-    const loadedSongs = $("#load-songs")
+    const $loadedSongs = $("#load-songs")
 
     // Use jQuery to get a reference to `song-list`
-    const songList = $("#song-list")
+    const $songList = $("#song-list")
 
 
     /*
@@ -12,7 +12,7 @@ $(document).ready(function () {
         the button is clicked, use $.ajax() to load `songs.json`
         from the file system
     */
-    loadedSongs.on("click", function (evt) {
+    $loadedSongs.on("click", function (evt) {
 
         $.ajax({
             "url": "songs.json",
