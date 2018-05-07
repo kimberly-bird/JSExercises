@@ -13,9 +13,11 @@ $(document).ready(function () {
         from the file system
     */
     loadedSongs.on("click", function (evt) {
-        console.log("clicked");
 
-        $.ajax("http://localhost:8080/songs.json")
+        $.ajax({
+            "url": "songs.json",
+            "method": "GET"
+        })
 
             /*
             Chain a `.then()` method to the ajax call, and when
@@ -23,33 +25,23 @@ $(document).ready(function () {
             the following structure. Use the jQuery append() method
             to put an HTML representation of each song the DOM as a
             child component of the .
-            
-            <section class="song">
-            <h1 class="song__title">{Title of song}</h1>
-            <section class="song__description">
-            Performed by {artist} on the album {album}
-            </section>
-            </section>
             */
 
-            .then(function (r) {
-                const fragment = document.createDocumentFragment()
+            .then(
+                function (songData) {
+                    let songHTMLRepresentation = ""
 
-                const songSection = document.createElement("section")
-                songSection.className = "song"
-                $(fragment).append(songSection)
+                    songData.songs.forEach(song => {
+                        songHTMLRepresentation += `
+                        <section class="song">
+                            <h1 class="song__title">${song.title}</h1>
+                            <section class="song__description">
+                            Performed by ${song.artist} on the album ${song.album}
+                            </section>
+                        </section>`
+                    })
 
-                const h1Text = document.createElement("h1")
-                h1Text.className = "song__title"
-                h1Text.textContent = `${r.songTitle}`
-                $(fragment).append(h1Text)
-
-                const songDesc = document.createElement("section")
-                songDesc.className = "song__description"
-                songDesc.textContent = `Performed by ${r.artist} on the album ${r.album}`
-                $(fragment).append(songDesc)
-
-                document.querySelector("#song-list").appendChild(fragment)
-            })
+                    $("#song-list").append(songHTMLRepresentation)
+                })
     })
 })
