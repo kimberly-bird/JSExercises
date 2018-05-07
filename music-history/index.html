@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Music History</title>
+</head>
+<!-- this is bound to the angular -->
+<body ng-app="TodoApp">
+    <!-- this is bound to the angular controller to this section tag -->
+        <section ng-controller="TodoCtrl">
+            <!-- from the state that I am bound to (in ToDoCntrl) add in the title -->
+                <h1>{{ title }}</h1>
+
+                <!-- ng-model - I want the value of this input field to be bound to the angular controller to output to the {{macaroni}} -->
+                <div>
+                    <input type="text" ng-model="macaroni" />
+                    <div> {{ macaroni }} </div>
+                </div>
+
+                <!-- this is a for in loop!! -->
+                <!-- first "todo" is the parameter sent and the 2nd todos is the $scope.todos in controller -->
+                <!-- <div>
+                    <ul ng-repeat="todo in todos">
+                        <li>{{ todo.name }}</li>
+                    </ul>
+                </div> -->
+
+                <!-- ng-repeat -->
+                <!-- ng-click -->
+                <!-- "todo" is a variable name "in todos" relates to the js file that you are pulling the data from and looping over. -->
+                <div>
+                    <p><strong>Incomplete Tasks</strong></p>
+                    <ul ng-repeat="todo in todos">
+                        <!-- ng-if allows for an if statement to display only "incomplete" tasks -->
+                        <li ng-if="todo.complete === 'incomplete'">{{ todo.name }} <button ng-click="killTodo(todo)">Finish</button></li>
+                    </ul>
+                </div>
+
+                <!-- filter on the searchText found in the js -->
+                <p><strong>Filter your tasks</strong></p>
+                <input type="text" ng-model="searchText" />
+                <div>
+                    <!-- first do a "loop" over the todos and then filter. Filter is a keyword in angular -->
+                    <ul ng-repeat="todo in todos | filter: searchText">
+                        <li>{{todo.name}}</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <strong>Grouped tasks:</strong>
+                    <!-- what to display, how to display them (grouped), what data to pull from (for "ng-options") - I think? -->
+                    <select
+                        ng-model="theTodo"
+                        ng-options="value.name group by value.complete for value in todos">
+                    </select>
+                </div>
+
+                <!-- form to add a new task -->
+                <!-- ng-submit is calling a function in the js file and the function inputs the value on click -->
+                <form ng-submit="addTask()">
+                    <input type="text" ng-model="newTaskName">
+                    <button>Add Task</button>
+                </form>
+      
+        </section>
+    
+        <!-- angular script always goes first -->
+        <script src="lib/node_modules/angular/angular.min.js"></script>
+        <script src="./app/Todo.js"></script>
+</body>
+</html>

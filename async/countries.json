@@ -1,0 +1,34 @@
+{
+    "countries": [
+        {
+            "country": "Ukraine",
+            "city": "Kyiv",
+            "region": "Eastern Europe",
+            "language": "Russian and Ukrainian"
+        },
+        {
+            "country": "Russia",
+            "city": "Voronezh", 
+            "region": "Eastern Europe",
+            "language": "Russian"
+        },
+        {
+            "country": "Hungary",
+            "city": "Budapest",
+            "region": "Central Europe",
+            "language": "Hungarian"
+        },
+        {
+            "country": "Estonia",
+            "city": "Tallinn",
+            "region": "Eastern Europe",
+            "language": "Estonian and Russian"
+        },
+        {
+            "country": "China",
+            "city": "Guzhen",
+            "region": "Asia",
+            "language": "Chinese"
+        }
+    ]
+}
