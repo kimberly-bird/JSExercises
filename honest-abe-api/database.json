@@ -1,0 +1,101 @@
+{
+    "pacs": [
+    {
+        "id": 1,
+        "name": "Ultimate Super Pac"
+    },
+    {
+        "id": 2,
+        "name": "Mediocre Super Pac"
+    }
+    ],
+    "politicians": [
+        {
+            "id": 1,
+            "name": "Nancy Pelosi"
+        },
+        {
+            "id": 2,
+            "name": "Steven Colbert"
+        }
+    ],
+    "politicianPacs": [
+        {
+            "id": 1,
+            "politicianId": 1,
+            "pacId": 2
+        },
+        {
+            "id": 2,
+            "politicianId": 2,
+            "pacId":1
+        }
+    ],
+    "politicianBills": [
+        {
+            "id": 1,
+            "politicianId": 2,
+            "billId": 1
+        },
+        {
+            "id": 2,
+            "politicianId": 1,
+            "billId": 2
+        }
+    ],
+    "bills": [
+        {
+            "id": 1,
+            "interestId": 1
+        },
+        {
+            "id": 2,
+            "interestId": 2
+        }
+    ],
+    "interests": [
+        {
+            "id": 1,
+            "name": "Doritos replace Lays"
+        },
+        {
+            "id": 2,
+            "name": "take money from rich and give to poor"
+        }
+    ],
+    "corporations": [
+        {
+            "id": 1,
+            "name": "Doritos"
+        },
+        {
+            "id": 2,
+            "name": "Some company"
+        }
+    ],
+    "pacInterests": [
+        {
+            "id": 1,
+            "pacId": 1,
+            "interestId": 1
+        },
+        {
+            "id": 2,
+            "pacId": 2,
+            "interestId": 2
+        }
+    ],
+    "corporationPacs": [
+        {
+            "id": 1,
+            "pacId": 2,
+            "corpId": 2
+        },
+        {
+            "id": 2,
+            "pacId": 1,
+            "corpId": 1
+        }
+    ]
+
+}
