@@ -36,19 +36,25 @@ for (let i = 0; i < scores.length; i++) {
 // Which grade had the most students achieve it? Use an if statment, and a currentGradeCount variable, in your for..in loop to see if the current grade's value is higher than the last one.
 // Which grade had the fewest students achieve it?
 
+// keeps track of the number of grades earned
 let mostNumOfGrades = 0;
+// keeps track of the letter grade
 let highestGradeCount;
 
 for (key in grades) {
+    // keeps track of the current key in the for .. in loop iteration
     let currentGradeCount = grades[key];
 
+    // checks if the current key in the loop is greater than the numOfGrades value
     if(currentGradeCount > mostNumOfGrades) {
+        // if true, updates mostNumOfGrades value to the updated number
         mostNumOfGrades = currentGradeCount;
+        // and updates the letter grade highestGradeCount variable
         highestGradeCount = key;
     }
 }
 
-console.log("highest grade count:", highestGradeCount, "number of scores:", mostNumOfGrades);
+console.log(`Highest grade count: ${highestGradeCount}. Number of scores: ${mostNumOfGrades}`);
 
 //lowest number of students received this grade
 let leastNumOfGrades = mostNumOfGrades;
