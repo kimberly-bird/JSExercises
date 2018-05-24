@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Kimmy from './Kimmy';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// render is like appendChild - append <App /> onto ReactDOM
+ReactDOM.render(<Kimmy />, document.getElementById('root'));
 registerServiceWorker();
