@@ -10,30 +10,45 @@ import img from './budapest.jpg';
 // Child components (home, car) don't have state
 class Me extends Component {
 
-    constructor (props) {
+    constructor(props) {
         super(props)
+
+        this.contactCardKey = 1
 
         // Put all information about yourself as state properties
         this.state = {
-            firstName: "Kimmy",
-            lastName: "Bird",
-            cohort: "Day 22",
-            home: "East Nash",
-            car: "Mustang",
-            pet: "Zoli"
+            firstName: "",
+            lastName: "",
+            cohort: "",
+            address: {},
+            car: "",
+            pet: {}
         }
+    }
+
+    loadPeople() {
+        fetch("http://localhost:8088/people/1")
+            // Must be explicit on how to parse the response
+            .then(r => r.json())
+
+            // JSON parsed data comes to this then()
+            .then(p => this.setState(p))
+    }
+
+    componentDidMount() {
+        this.loadPeople()  // Trigger the loading of contacts
     }
 
 
     render() {
         return (
-            <div>
+            <div id="main" className="people">
                 <h3>{this.state.firstName} {this.state.lastName}</h3>
-                <img src={img} className="Img-logo" alt="img" style={{height: 200}}/>
-                <Cohort cohort={this.state.cohort}/>
-                <Home home={this.state.home}/>
-                <Car car={this.state.car}/>
-                <Pet pet={this.state.pet}/>
+                <img src={img} className="Img-logo" alt="img" style={{ height: 200 }} />
+                <Cohort cohort={this.state.cohort} />
+                <Home address={this.state.address} />
+                <Car car={this.state.car} />
+                <Pet pet={this.state.pet} />
             </div>
         );
     }

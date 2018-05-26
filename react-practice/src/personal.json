@@ -1,0 +1,33 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "Backpacker Tracker",
+            "description": "This app allows users to record highlights of trips abroad. Users regisister and are authenticated throughout the app. Users add trip details and view trips on map or timeline views."
+        },
+        {
+            "id": 2,
+            "name": "Take a Break",
+            "description": "This app allows users to track daily breaks to improve productivity. Users enter a daily break goal and goals taken throughout the day to 'earn' points toward their daily goal. Users also rate their overall day's productivity to find the balance of breaks and optimum productivity."
+        }
+    ],
+    "people": [
+        {
+            "id": 1,
+            "firstName": "Kimmy",
+            "lastName": "Bird",
+            "cohort": "Day 22",
+            "address": {
+                "street": "1921 Greenwood",
+                "city": "Nashville",
+                "state": "TN"
+            },
+            "pet": {
+                "species": "dog",
+                "breed": "Mini Schnauzer / Brussels Griffon",
+                "name": "Zoli"
+            },
+            "car": "Mustang"
+        }
+    ]
+}

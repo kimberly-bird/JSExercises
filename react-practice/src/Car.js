@@ -4,7 +4,8 @@ class Car extends Component {
     render() {
         return (
             <div>
-                <h5>Car: {this.props.car}</h5>
+                <h4>Dream Car</h4>
+                <h5>{this.props.car}</h5>
             </div>
         );
     }

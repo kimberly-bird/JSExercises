@@ -4,7 +4,10 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <h5>Address: {this.props.home}</h5>
+                <h4>Address</h4>
+                <h5>{this.props.address.street}</h5>
+                <h5>{this.props.address.city}</h5>
+                <h5>{this.props.address.state}</h5>
             </div>
         );
     }
