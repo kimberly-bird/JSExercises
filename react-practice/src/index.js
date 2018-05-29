@@ -3,9 +3,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Kimmy from './Kimmy';
-import Project from './Project';
 import registerServiceWorker from './registerServiceWorker';
 import NavBar from "./nav/NavBar";
+import ProjectList from "./ProjectList";
 
 // render is like appendChild - append <App /> onto ReactDOM
 ReactDOM.render((
@@ -14,7 +14,7 @@ ReactDOM.render((
             <NavBar/>
             <Route exact path="/" component={Kimmy} />
             <Route exact path="/Kimmy" component={Kimmy} />
-            <Route exact path="/Project" component={Project} />
+            <Route exact path="/Project" component={ProjectList} />
         </div>
     </Router>
 ), document.querySelector("#root"))
