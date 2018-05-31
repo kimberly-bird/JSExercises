@@ -4,6 +4,7 @@ import Car from './Car';
 import Pet from './Pet';
 import Cohort from './Cohort';
 import img from './budapest.jpg';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // home/car, etc are describing me and my state
 // Me should be the only component with state, but React uses props to pass state to child components

@@ -1,0 +1,19 @@
+import React, { Component } from "react"
+import "bootstrap/dist/css/bootstrap.min.css"
+
+class BootstrapInput extends Component {
+
+    render() {
+        return (
+            <input type="text"
+                id={this.props.id}
+                value={this.props.val}
+                onChange={this.props.handler}
+                className="form-control"
+                placeholder={this.props.placeholder} />
+
+        );
+    }
+}
+
+export default BootstrapInput;

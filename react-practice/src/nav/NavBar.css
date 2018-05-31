@@ -1,0 +1,13 @@
+.mainNavigation {
+    background-color: goldenrod;
+    color: tomato;
+    padding: 8px;
+}
+
+.mainNavigation > a {
+    margin: 0 15px;
+}
+
+.projectList {
+    padding: 10px;
+}
