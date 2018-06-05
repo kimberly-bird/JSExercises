@@ -28,14 +28,14 @@ class ContactForm extends Component {
             emailAddress: this.state.emailAddress
         }
 
-        this.setState(prevState => ({
+        this.setState({
             firstName: "",
             lastName: "",
             phoneNumber: "",
             emailAddress: ""
-        }))
+        })
 
-        fetch("http://localhost:5000/contacts", {
+        fetch("http://localhost:8088/contacts", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -43,7 +43,11 @@ class ContactForm extends Component {
             body: JSON.stringify(newContactInfo)
         })
         .then(r => r.json())
-        .then(newContact => console.log(newContact))
+        .then(newContact => sessionStorage.setItem("ActiveUser", JSON.stringify({
+            "id": newContact.id,
+            "username": newContact.username,
+            "email": newContact.email
+        })))
 
     }.bind(this)
 
